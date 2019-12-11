@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import AddedFeature from './AddedFeature';
 
@@ -13,10 +14,21 @@ const AddedFeatures = props => {
           ))}
         </ol>
       ) : (
-        <p>You can purchase items from the store.</p>
-      )}
+          <p>You can purchase items from the store.</p>
+        )}
     </div>
   );
 };
 
-export default AddedFeatures;
+const mapStateToProps = (state) => {
+  return {
+    additionalPrice: state.additionalPrice,
+    car: state.car,
+    additionalFeatures: state.additionalFeatures
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  {}
+)(AddedFeatures);
