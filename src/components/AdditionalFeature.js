@@ -1,10 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 const AdditionalFeature = props => {
+
+  const ClickHandler = (e) => {
+    props.AddItem(props.feature.id)
+  }
+
+
+
   return (
     <li>
       {/* Add an onClick that will let you add a feature to your car */}
-      <button className="button">Add</button>
+      <button className="button" onClick={ClickHandler}>Add</button>
       {props.feature.name} (+{props.feature.price})
     </li>
   );
