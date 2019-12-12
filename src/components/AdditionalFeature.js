@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { AddItem } from '../Action/action';
 const AdditionalFeature = props => {
 
   const ClickHandler = (e) => {
@@ -30,5 +31,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps,
-  {}
+  { AddItem }
 )(AdditionalFeature);
